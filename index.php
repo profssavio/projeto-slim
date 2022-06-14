@@ -21,7 +21,6 @@ $container = $containerBuilder->build();
 $app = AppFactory::createFromContainer( $container );
 
 // Registra os middleware
-// Registra as routes
 ( require_once __DIR__ . '/middleware.php' )( $app );
 
 // Registra as routes
