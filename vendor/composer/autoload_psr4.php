@@ -28,5 +28,5 @@ return array(
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
-    'App\\' => array($baseDir . '/app/src'),
+    'App\\' => array($baseDir . '/app'),
 );

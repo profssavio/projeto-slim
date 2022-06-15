@@ -1,17 +1,15 @@
 <?php
 
+use App\Controllers\HomeController;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Slim\App;
-use Slim\Psr7\Request;
-use Slim\Psr7\Response;
 
 return function ( App $app ) {
 
-    $app->get( '/', function ( Request $request, Response $response, $args ) {
-        $response->getBody()->write( 'Ola teste de rota' );
-        return $response;
-    } );
+    $app->get( '/', [HomeController::class, 'index'] );
 
-    $app->get( '/teste', function ( Request $request, Response $response, $args ) {
+    $app->get( '/teste', function ( RequestInterface $request, ResponseInterface $response, $args ) {
         $response->getBody()->write( 'pagina de teste' );
         return $response;
     } );
