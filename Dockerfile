@@ -20,6 +20,11 @@ RUN apt-get clean && apt-get update -y && apt-get install -y \
     libxml2-dev \ 
     libonig-dev
 
+
+# Use the default production configuration
+#RUN mv $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
+# COPY config/php.ini $PHP_INI_DIR/php.ini
+
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql intl iconv opcache bcmath xml soap mbstring
 
