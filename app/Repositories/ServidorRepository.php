@@ -13,7 +13,7 @@ Class ServidorRepository implements IServidorRepository {
     }
 
     public function findAll(): Collection {
-        return $this->capsule::table( 'tb_servidor' )->get();
+        return $this->capsule::table( 'tb_servidor' )->join( 'tb_cargo', 'tb_servidor.cargo', '=', 'tb_cargo.id' )->get();
     }
 
 }
