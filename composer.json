@@ -12,6 +12,7 @@
         "middlewares/whoops": "^2.0",
         "monolog/monolog": "^3.1",
         "psr/container": "1.1.2",
-        "php-di/php-di": "^6.4"
+        "php-di/php-di": "^6.4",
+        "illuminate/database": "^9.17"
     }
 }

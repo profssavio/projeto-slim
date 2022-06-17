@@ -1,19 +1,6 @@
 version: "3.9"
 
 services:
-  php:
-    container_name: php-apache-8.1.6
-    build: ./      
-    volumes:
-      - ./:/var/www/html
-    ports:
-      - 3000:80    
-    depends_on:
-      - db
-      - phpmyadmin   
-    networks:
-      - php-net         
-
   db:
     image: mysql:8
     container_name: mysql
@@ -26,9 +13,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: dbmodelo
-    networks:
-      - php-net        
- 
+
   phpmyadmin:
     image: phpmyadmin:5
     container_name: phpmyadmin
@@ -39,11 +24,5 @@ services:
       PMA_HOST: db
     depends_on:
       - db
-    networks:
-      - php-net      
-
 volumes:
   mysql-volume:
-
-networks:
-  php-net:  
